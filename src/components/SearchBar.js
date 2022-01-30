@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, TextInput } from "react-native";
+import { View, Text, StyleSheet, TextInput, Button } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
 const SearchBar = ({ term, onChangeTerm, onSubmitTerm }) => {
@@ -15,6 +15,7 @@ const SearchBar = ({ term, onChangeTerm, onSubmitTerm }) => {
         onChangeText={onChangeTerm}
         onEndEditing={onSubmitTerm}
       />
+      <Button title=">" onPress={onSubmitTerm} />
     </View>
   );
 };
