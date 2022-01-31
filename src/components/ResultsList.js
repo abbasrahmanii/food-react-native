@@ -10,7 +10,7 @@ import { useNavigation } from "@react-navigation/native";
 import ResultsDetails from "./ResultsDetails";
 
 const ResultsList = ({ title, results }) => {
-  const navigation = useNavigation();
+  const { navigate } = useNavigation();
 
   if (!results.length) {
     return null;
@@ -26,7 +26,7 @@ const ResultsList = ({ title, results }) => {
         data={results}
         renderItem={({ item }) => (
           <TouchableOpacity
-            onPress={() => navigation.navigate("ResultsShow", { id: item.id })}
+            onPress={() => navigate("ResultsShow", { id: item.id })}
           >
             <ResultsDetails result={item} />
           </TouchableOpacity>
